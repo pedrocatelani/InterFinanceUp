@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tales\\Documents\\fatec\\inter\\FinanceUP\\FinanceUP.csproj",
-      "projectName": "FinanceUP",
-      "projectPath": "C:\\Users\\tales\\Documents\\fatec\\inter\\FinanceUP\\FinanceUP.csproj",
+      "projectUniqueName": "C:\\Users\\tales\\Documents\\fatec\\inter\\FinanceUP\\FinanceUp.csproj",
+      "projectName": "FinanceUp",
+      "projectPath": "C:\\Users\\tales\\Documents\\fatec\\inter\\FinanceUP\\FinanceUp.csproj",
       "packagesPath": "C:\\Users\\tales\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\tales\\Documents\\fatec\\inter\\FinanceUP\\obj\\",
       "projectStyle": "PackageReference",
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
