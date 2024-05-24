@@ -1,0 +1,114 @@
+@import url(https://fonts.google.com/specimen/Freeman);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #001D3D;
+}
+
+.sidebar {
+    height: 100%;
+    width: 20px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #003566;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 90px;
+    font-weight: bold;
+}
+.sidebar a {
+    padding: 8px 8px 8px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFC300;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    color: #FFBD59;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidebar .link-text {
+    display: none;
+    transition: 0.3s;
+}
+.sidebar.open .link-text {
+    display: inline;
+}
+.sidebar.collapsed .link-text {
+    display: none;
+}
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #FFC300;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.openbtn:hover {
+    background-color: yellow;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+.link-text {
+    display: none;
+    margin-left: 10px;
+}
+.sidebar .link-text {
+    display: none;  
+    transition: 0.3s;  
+}
+.sidebar.expanded .link-text {
+    display: inline;  
+}
+.sidebar .sidebar-logo {
+    position: absolute;
+    top: 0;
+    opacity: 0;  
+    max-width: 100%;  
+    height: auto;  
+    transition: opacity 0.3s;  
+}
+.sidebar.expanded .sidebar-logo {
+    opacity: 1;  
+}
+#mySidebar.collapsed {
+    width: 80px;
+    transition: width 0.3s ease;
+}
+
+#mySidebar.expanded {
+    width: 250px;
+    transition: width 0.3s ease;
+}
+.icon-class {
+    display: none;  
+    position: absolute;
+    top: 0px;  
+    left: 0px;
+    width: 80px;  
+    height: 80px;  
+    opacity: 0;  
+    transition: opacity 0.3s;  
+}
+.sidebar.collapsed .icon-class {
+    display: block;  
+    opacity: 1;
+}

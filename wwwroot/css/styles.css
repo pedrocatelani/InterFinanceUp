@@ -1,0 +1,256 @@
+@import url(https://fonts.google.com/specimen/Freeman);
+/* styles index */
+body {
+    background-size: 100% auto;  
+    background-repeat: no-repeat;
+    background-position: top; 
+    min-height: 100vh; 
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #001D3D;
+    display: flex;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1000; 
+    background-color: #001D3D; 
+}
+.logo {
+    height: 75px; 
+    width: 200px; 
+    margin-right: auto; 
+    margin-left: 20px;
+}
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.login-button {
+    background-color: #FFC300; 
+    border: none;
+    color: #001D3D; 
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #FFA500;
+}
+.rounded-rectangle {
+    width: 800px; 
+    height: 400px; 
+    background-color: rgba(0, 29, 61, 0.5); 
+    border-radius: 25px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.text1 {
+    color: #FFC300; 
+    font-size: 30px;  
+    font-weight: bold;
+    text-align: center;
+}
+
+.text2 {
+    color: #FFFFFF; 
+    font-size: 20px;  
+    text-align: center;
+    margin-top: 20px;  
+}
+
+.text3 {
+    display: block;
+    color: #ffffff; 
+    font-size: 15px; 
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px; 
+}
+a {
+    text-decoration: none; 
+}
+.signup-button {
+    display: block;
+    width: 200px;  
+    height: 50px;  
+    margin: 20px auto;  
+    background-color: #FFC300; 
+    color: #001D3D; 
+    border: none;
+    border-radius: 25px; 
+    font-size: 20px;  
+    cursor: pointer;
+    font-weight: bold;
+}
+.signup-button:hover {
+    background-color: #FFA500;  
+    transition: background-color 0.3s ease;  
+}
+/* login */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #001D3D;
+}
+.image-container {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 275px); 
+    transform: translate(-50%, -50%);
+}
+.signup-image-container{
+    position: fixed;
+    top: 60%;
+    left: calc(50% - 275px); 
+    transform: translate(-80%, -80%);
+    width: 30%;
+    height: auto;
+}
+label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #001D3D;
+    padding: 20px;
+    margin-top: 300px;
+    margin-left: 200px;
+    color: #ddd;
+}
+.login-container label {
+    margin: 10px 0;
+}
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none
+    
+}
+.login-button {
+    background-color: #FFC300;
+    color: #001D3D;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+.google-button {
+    background-color: #ddd;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 5px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.google-button:hover {
+    background-color: #FFA500;
+    transition: background-color 0.3s ease;
+}
+.google-logo {
+    height: 30px; 
+    width: 30px;
+    margin-right: 5px; 
+}
+.google-button-content {
+    display: flex;
+    align-items: center;
+}  
+.login-button:hover {
+    background-color: #FFA500;
+    transition: background-color 0.3s ease;
+}
+.input-field {
+    font-size: 20px; 
+    padding: 10px; 
+}
+.login-container input[type="email"],
+.login-container input[type="password"]{  
+    border: none;
+    border-bottom: 2px solid yellow;
+    background: transparent;
+    color: yellow;
+} 
+.login-container input[type="text"] {
+    margin-bottom: 11px; 
+}
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {  
+    border: none;
+    border-bottom: 2px solid yellow;
+    background: transparent;
+    color: yellow;
+}
+/* tipo imagina usar edge tlg kkkk */
+/* muda a cor do placeholder no edge */
+.login-container input[type="text"]::-ms-input-placeholder,
+.login-container input[type="email"]::-ms-input-placeholder,
+.login-container input[type="password"]::-ms-input-placeholder {
+    color: yellow;
+}
+/* firefox*/
+.login-container input[type="text"]::-moz-placeholder,
+.login-container input[type="email"]::-moz-placeholder,
+.login-container input[type="password"]::-moz-placeholder {
+    color: yellow;
+}
+/* opera safari e derivados */
+.login-container input[type="text"]::-webkit-input-placeholder,
+.login-container input[type="email"]::-webkit-input-placeholder,
+.login-container input[type="password"]::-webkit-input-placeholder {
+    color: yellow;
+}
+/* styles perguntas */
+.questions-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
