@@ -2,22 +2,39 @@
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="icon" type="image/png" href="~/images/icon.png">
     <link rel="stylesheet" type="text/css" href="~/css/dashstyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="~/js/script.js"></script>
 </head>
 <body>
+    <div id="user-info">
+        <div class="dropdown">
+            <img id="user-photo" src="~/images/defaultpfp.png" alt="User Photo">
+            <div id="user-dropdown" class="dropdown-content">
+                <a href="~/user/update">Profile Settings</a>
+                <a href="~/user/login">Logout</a>
+            </div>
+        </div>
+        <div id="user-name">
+            User
+        </div>
+    </div>
     <div id="mySidebar" class="sidebar">
         <img src="~/images/icon.png" class="icon-class" alt="Icon description" >
         <img src="~/images/logo.png" alt="Logo" class="sidebar-logo">
-        <a href="dashboard.html" onclick="closeNav()"><i class="fas fa-home"></i><span class="link-text">Dashboard</span></a>
-        <a href="#"><i class="fas fa-user"></i><span class="link-text">User</span></a>
-        <a href="#"><i class="fas fa-envelope"></i><span class="link-text">Mail</span></a>
-        <a href="#"><i class="fas fa-cog"></i><span class="link-text">Options</span></a>
+        <a href="~/main/dashboard" onclick="closeNav()"><i class="fas fa-home"></i><span class="link-text">Dashboard</span></a>
+        <a href="#"><i class="fas fa-bell"></i><span class="link-text">Notificações</span></a>
+        <a href="#"><i class="fas fa-chart-line"></i><span class="link-text">Investimentos</span></a>       
+        <a href="#"><i class="fas fa-cog"></i><span class="link-text">Configurações</span></a>
+        <a href="#"><i class="fas fa-calendar-alt"></i><span class="link-text">Planejamento</span></a> 
     </div>
-<div id="main">
-    <button class="openbtn" onclick="toggleNav()">☰</button>  
-</div>
-<script src="~/js/script.js"></script>
+    <h1 id="dashboard-title">Dashboard</h1>
+    <div id="balance-box">Saldo:<br> R$xx,xx</div>
+    <div id="receitas-box">Receitas:<br> R$xx,xx</div>
+    <div id="despesas-box">Despesas:<br> R$xx,xx</div>
+    <div id="main">
+        <button class="openbtn" onclick="toggleNav()">☰</button>  
+    </div>
 </body>
 </html>

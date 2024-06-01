@@ -1,0 +1,40 @@
+
+@model User
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="~/css/questions.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="~/home/index">
+                <img src="~/images/logo.png" alt="Logo">
+            </a>
+        </div>
+    </header>
+    <div id="quiz-container">
+        <div id="question-container">
+            <button id="prev-button" onclick="prevQuestion()"><i class="fas fa-arrow-left"></i></button>
+            <p id="question-text"></p>
+        </div>
+        <div id="answer-buttons" class="btn-container">
+            <!-- Answer buttons will be inserted here by JavaScript -->
+        </div>
+        <div id="pagination" class="pagination-container"></div> <!-- Circles will be added here -->
+        <div id="result-container" style="display: none;">
+            <p id="result-text">Seu nível de investidor é: <span id="grade"></span>.</p>
+            <div id="result-buttons" class="btn-container">
+                <button id="result-buttons" onclick="restartQuiz()">Restart</button>
+                <a type="submit" href="~/main/dashboard"><button onclick="leaveQuiz()">Leave</button></a>
+            </div>
+        </div>
+               
+    </div>
+    <script src="~/js/questions.js"></script>
+</body>
+</html>

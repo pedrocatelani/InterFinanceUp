@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@model User
 <html>
 <head>
     <title>Register</title>
@@ -8,23 +8,16 @@
     <header class="header">
         <a href="~/home/index"><img src="~/images/logo.png" alt="Logo" class="logo"></a> 
     </header>
-    <div style="justify-content: space-around;">
         <div class="login-container">
-            <form action="~/main/dashboard" method="post">
-                <input type="text" id="name" name="name" placeholder="Name" required class="input-field">
-                <input type="email" id="email" name="email" placeholder="Email" required class="input-field">
-                <input type="password" id="password" name="password" placeholder="Password" required class="input-field">
+            <form asp-controller="User" asp-action="SignIn" method="post">
+                <input type="text" asp-for="Name" id="name" name="name" placeholder="Name" required class="input-field">
+                <input type="email" asp-for="Email" id="email" name="email" placeholder="Email" required class="input-field">
+                <input type="password" asp-for="Password" id="password" name="password" placeholder="Password" required class="input-field">
                 <input type="submit" value="Register" class="login-button">
-                <button onclick="onSignIn()" class="google-button">
-                    <span class="google-button-content">
-                        <img src="~/images/google-logo.png" alt="Google logo" class="google-logo"> Register with Google
-                    </span>
-                </button>
             </form>
         </div>
         <div class="signup-image-container">
             <img src="~/images/signupImg.png" alt="Descriptive text">
         </div>
-    </div>
 </body>
 </html>

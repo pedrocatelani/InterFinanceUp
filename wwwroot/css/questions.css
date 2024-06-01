@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #001D3D;
+    margin: 0;
+    height: 100vh;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1000;
+    background-color: #001D3D;
+    width: 100%;
+    padding: 0 20px; /* Add padding to adjust spacing */
+}
+.logo img {
+    height: 75px; 
+    width: auto; /* Ensure aspect ratio is maintained */
+}
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-size: 20px;
+    height: auto; /* Adjust height automatically */
+    margin-top: 20px; /* Add margin to separate from question text */
+}
+.answer-btn {
+    background-color: #FFBD59;
+    border: none;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.answer-btn:hover {
+    background-color: #FFC300;
+}
+#quiz-container {
+    background: #003566;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 650px;
+    max-width: 100%; /* Set maximum width */
+    height: auto; /* Adjust height automatically */
+    position: relative;
+    margin-top: 80px; /* Adjust for the fixed header */
+}
+#question-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    position: relative; /* Ensure relative positioning for absolute button */
+    width: 600px;
+    padding: 30px;
+    max-width: 100%; /* Set maximum width */
+}
+#prev-button {
+    background-color: #FFC300;
+    border: none;
+    color: #003566;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Add margin to separate from the text */
+    margin-bottom: 5px; /* Add margin to move it down */
+}
+#question-text {
+    font-size: 24px;
+    margin-bottom: 30px; /* Adjusted margin */
+    margin-top: 6px;
+    margin-left: 10px; /* Add margin to move it to the right */
+    max-width: 100%; /* Set maximum width */
+    word-wrap: break-word;
+    color: white;
+    font-weight: bold;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+.btn-container button {
+    background-color: #FFBD59;
+    border: none;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.btn-container button:hover {
+    background-color: #FFC300;
+}
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to separate from answer buttons */
+    width: 100%;
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+}
+.highlight {
+    background-color: #FFBD59;
+}
+#result-container {
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Add margin to separate from quiz container */
+}
+#result-text {
+    font-size: 20px; /* Adjust font size */
+    margin-bottom: 10px; /* Add margin */
+    color: white;
+    font-weight: bold; /* Make the text bold */
+}
+#result-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Add gap between buttons */
+}
+.result-btn {
+    background-color: #FFBD59;
+    border: none;
+    color: black;
+    padding: 10px 20px; /* Adjust padding */
+    margin: 5px; /* Add margin */
+    cursor: pointer;
+    border-radius: 20px; /* Make it more round */
+    font-size: 16px; /* Adjust font size */
+}
+.result-btn:hover {
+    background-color: #FFC300;
+}

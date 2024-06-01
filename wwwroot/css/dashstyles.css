@@ -1,10 +1,10 @@
 @import url(https://fonts.google.com/specimen/Freeman);
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Freeman', sans-serif;
     background-color: #001D3D;
 }
-
+/* tudo isso em uma sidebar pqp */
 .sidebar {
     height: 100%;
     width: 20px;
@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 90px;
-    font-weight: bold;
+    
 }
 .sidebar a {
     padding: 8px 8px 8px 25px;
@@ -31,7 +31,6 @@ body {
 .sidebar a:hover {
     color: #FFBD59;
 }
-
 .sidebar .closebtn {
     position: absolute;
     top: 0;
@@ -111,4 +110,108 @@ body {
 .sidebar.collapsed .icon-class {
     display: block;  
     opacity: 1;
+}
+/* salve */
+#balance-box {
+    font-size: 20px;
+    color: #FFC300;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #FFC300;  
+    border-radius: 15px;  
+    width: 200px;  
+    position: absolute;  
+    top: 150px;  
+    left: 335px;  
+    margin-top: 30px;
+    
+    
+}
+#receitas-box{
+    font-size: 20px;
+    color: #FFC300;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #FFC300;  
+    border-radius: 15px;  
+    width: 200px;  
+    position: absolute;  
+    top: 150px;  
+    left: 335px;  
+    margin-top: 30px;
+    
+}
+#despesas-box {
+    font-size: 20px;
+    color: #FFC300;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #FFC300;  
+    border-radius: 15px;  
+    width: 200px;  
+    position: absolute;  
+    top: 150px;  
+    left: 335px;  
+    margin-top: 30px;    
+}
+#dashboard-title {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;  
+    top: 110px;  
+    left: 335px;  
+    color: white;
+} 
+.dashtext
+{
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+}
+#receitas-box {
+    left: 590px;  
+}
+#despesas-box {
+    left: 850px;  
+}
+#user-info {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    display: flex;  
+    align-items: center;  
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+#user-photo {
+    width: 50px;  
+    height: 50px;  
+    border-radius: 50%;  
+    left: 20%;
+    margin-right: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003566;
+    color: #FFBD59;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #FFBD59; 
+    font-weight: bold;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+#user-name {
+    font-size: 20px;
+    color: white;
+    right: 35%;
 }
