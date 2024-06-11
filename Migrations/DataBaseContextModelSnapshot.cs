@@ -26,43 +26,46 @@ namespace FinanceUp.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Mouth")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Month")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<float?>("ExpenseTransport")
+                    b.Property<float>("ExpenseTransport")
                         .HasColumnType("real");
 
-                    b.Property<float?>("FoodExpense")
+                    b.Property<float>("FoodExpense")
                         .HasColumnType("real");
 
-                    b.Property<float?>("HealthEducationExpenses")
+                    b.Property<float>("HealthEducationExpenses")
                         .HasColumnType("real");
 
-                    b.Property<float?>("HousingExpense")
+                    b.Property<float>("HousingExpense")
                         .HasColumnType("real");
 
-                    b.Property<float?>("Investments")
+                    b.Property<float>("Investments")
                         .HasColumnType("real");
 
-                    b.Property<float?>("LeisureExpenses")
+                    b.Property<float>("LeisureExpenses")
                         .HasColumnType("real");
 
-                    b.Property<float?>("OtherEarnings")
+                    b.Property<float>("OtherEarnings")
                         .HasColumnType("real");
 
-                    b.Property<float?>("OtherExpenses")
+                    b.Property<float>("OtherExpenses")
                         .HasColumnType("real");
 
-                    b.Property<float?>("Returns")
+                    b.Property<float>("Returns")
                         .HasColumnType("real");
 
-                    b.Property<float?>("Salary")
+                    b.Property<float>("Salary")
                         .HasColumnType("real");
 
-                    b.Property<float?>("Taxes")
+                    b.Property<float>("Taxes")
                         .HasColumnType("real");
 
-                    b.HasKey("UserId", "Mouth");
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "Month");
 
                     b.ToTable("Accounts");
                 });
@@ -72,9 +75,6 @@ namespace FinanceUp.Migrations
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<float>("Balance")
-                        .HasColumnType("real");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -88,12 +88,20 @@ namespace FinanceUp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Result")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Account", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

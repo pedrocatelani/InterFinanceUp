@@ -1,0 +1,16 @@
+@model List<User>
+<html>
+    <head>
+        <title>User</title>
+        <link rel="icon" type="image/png" href="images/icon.png">
+    </head>
+    <body>
+        <div>
+            @foreach(User user in Model){
+                <h1>@user.Name</h1>
+                <p>@user.Email</p>
+                <a href="/user/update/@user.UserId"><button>Editar</button></a>
+                <a href="/user/delete/@user.UserId"><button>Apagar</button></a>
+            }
+        </div>
+</body>

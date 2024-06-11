@@ -1,0 +1,16 @@
+@model List<Account>
+<link rel="stylesheet" type="text/css" href="~/css/account.css">
+
+<div class="accountContainer">
+    <div id="header">
+        <button id="danger"><a href="~/main/dashboard">Voltar</a></button>
+        <button id="confirm"><a href="~/account/balance">Create</a></button>
+    </div>
+    @foreach(Account account in Model){
+        <div>
+            <h1>@account.Month</h1>
+            <h1>@account.Year</h1>
+            <button id="confirm"><a href="~/account/transactions/@account.UserId">Transações</a></button>
+        </div>
+    }
+</div>

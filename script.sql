@@ -11,37 +11,37 @@ GO
 BEGIN TRANSACTION;
 GO
 
-CREATE TABLE [Accounts] (
-    [UserId] uniqueidentifier NOT NULL,
-    [Mouth] datetime2 NOT NULL,
-    [Salary] real NULL,
-    [Returns] real NULL,
-    [OtherEarnings] real NULL,
-    [FoodExpense] real NULL,
-    [ExpenseTransport] real NULL,
-    [HousingExpense] real NULL,
-    [HealthEducationExpenses] real NULL,
-    [Investments] real NULL,
-    [Taxes] real NULL,
-    [LeisureExpenses] real NULL,
-    [OtherExpenses] real NULL,
-    CONSTRAINT [PK_Accounts] PRIMARY KEY ([UserId], [Mouth])
-);
-GO
-
 CREATE TABLE [Users] (
     [UserId] uniqueidentifier NOT NULL,
     [Name] nvarchar(max) NOT NULL,
     [Email] nvarchar(max) NOT NULL,
     [Password] nvarchar(max) NOT NULL,
-    [Balance] real NOT NULL,
-    [Result] nvarchar(max) NULL,
     CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
 );
 GO
 
+CREATE TABLE [Accounts] (
+    [UserId] uniqueidentifier NOT NULL,
+    [Month] nvarchar(450) NOT NULL,
+    [Year] int NOT NULL,
+    [Salary] real NOT NULL,
+    [Returns] real NOT NULL,
+    [OtherEarnings] real NOT NULL,
+    [FoodExpense] real NOT NULL,
+    [ExpenseTransport] real NOT NULL,
+    [HousingExpense] real NOT NULL,
+    [HealthEducationExpenses] real NOT NULL,
+    [Investments] real NOT NULL,
+    [Taxes] real NOT NULL,
+    [LeisureExpenses] real NOT NULL,
+    [OtherExpenses] real NOT NULL,
+    CONSTRAINT [PK_Accounts] PRIMARY KEY ([UserId], [Month]),
+    CONSTRAINT [FK_Accounts_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([UserId]) ON DELETE CASCADE
+);
+GO
+
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20240601183924_Initial migration', N'8.0.4');
+VALUES (N'20240611204803_Inital Migration', N'8.0.4');
 GO
 
 COMMIT;

@@ -1,0 +1,45 @@
+@model Account
+
+<link rel="stylesheet" type="text/css" href="~/css/account.css">
+
+<div class="accountContainer">
+    <button id="danger"><a href="~/account/index">Voltar</a></button>
+    <h1>Balanço de @Model.Month (@Model.Year)</h1>
+    <form asp-controller="Account" asp-action="Transactions" method="POST">
+        <div>
+            <label for="newValue">Valor</label>
+            <input type="number" id="newValue" name="newValue" placeholder="Valor">
+        </div>
+        <div>
+            <label for="category">Escolha a categoria</label>
+            <select id=category name="category">
+                <option value="Salary">Salário</option>
+                <option value="Returns">Retornos</option>
+                <option value="OtherEarnings">Outros ganhos</option>
+                <option value="FoodExpense">Gastos alimentares</option>
+                <option value="ExpenseTransport">Gastos com transporte</option>
+                <option value="HousingExpense">Gastos com habitação</option>
+                <option value="HealthEducationExpenses">Saúde e educação</option>
+                <option value="Investments">Investimentos</option>
+                <option value="Taxes">Impostos</option>
+                <option value="LeisureExpenses">Gastos com Lazer</option>
+                <option value="OtherExpenses">Outros Gastos</option>
+            </select>
+        </div>
+        <div>
+            <input type="hidden" name="id" value="@Model.UserId">
+            <button id="confirm" type="submit">Adicionar</button>
+        </div>
+    </form>
+    <h2>Salário = @Model.Salary</h2>
+    <h2>Retornos = @Model.Returns</h2>
+    <h2>Outros Ganhos = @Model.OtherEarnings</h2>
+    <h2>Gastos alimentares = @Model.FoodExpense</h2>
+    <h2>Gastos com transporte = @Model.ExpenseTransport</h2>
+    <h2>Gastos com habitação = @Model.HousingExpense</h2>
+    <h2>Saúde e educação = @Model.HealthEducationExpenses</h2>
+    <h2>Investimentos = @Model.Investments</h2>
+    <h2>Valor = @Model.Taxes</h2>
+    <h2>Lazer = @Model.LeisureExpenses</h2>
+    <h2>Outros gastos = @Model.OtherExpenses</h2>
+</div>

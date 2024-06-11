@@ -1,14 +1,14 @@
 @model User
 <html>
-<head>
-    <title>User</title>
-    <link rel="icon" type="image/png" href="images/icon.png">
-</head>
-<body style="align-content: center; justify-content: center; flex-wrap: wrap; padding-block: 1rem;">
-    <div style="display: flex; flex-direction: column; margin: 0 auto; justify-content: center; flex-wrap: wrap; padding-block: 1rem;">
-        <img style="width: 250px; height: 250px;" src="~/images/defaultpfp.png" alt="user-image">]
-        <input style="width: 250px;" type="text" placeholder="Jorge">
-        <button style="width: 250px;">ALTERAR</button>
-        <button style="background-color: red; width: 250px;">DELETAR</button>
-    </div>
-</body>
+    <head>
+        <title>Update</title>
+        <link rel="icon" type="image/png" href="~/images/icon.png">
+    </head>
+    <body>
+        <form action="~/user/update/@Model.UserId" method="Post">
+            <input asp-for="Name" type="text" placeholder="Name">
+            <input asp-for="Email" type="text" placeholder="Email">
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>
