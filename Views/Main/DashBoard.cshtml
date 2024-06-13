@@ -1,6 +1,8 @@
 @inject IHttpContextAccessor HttpContextAccessor
+@model IEnumerable<ChartData>
 @{
     var userName = HttpContextAccessor.HttpContext?.Session.GetString("UserName");
+    var userId = Guid.Parse(HttpContextAccessor.HttpContext.Session.GetString("UserId"));
 }
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,7 @@
             <div class="dropdown">
                 <img id="user-photo" src="~/images/defaultpfp.png" alt="User Photo">
                 <div id="user-dropdown" class="dropdown-content">
-                    <a href="~/user/profile">Profile Settings</a>
+                    <a href="~/user/profile/@userId">Profile Settings</a>
                     <a href="~/user/logout">Logout</a>
                 </div>
             </div>
@@ -34,11 +36,50 @@
             <a href="~/account/index/"><i class="fas fa-calendar-alt"></i><span class="link-text">Transações</span></a> 
         </div>
         <h1 id="dashboard-title">Dashboard</h1>
-        <div id="balance-box">Saldo:<br> R$xx,xx</div>
+        <div id="balance-box">Saldo:<br> R$@ViewBag.Balance</div>
         <div id="receitas-box">Receitas:<br> R$xx,xx</div>
         <div id="despesas-box">Despesas:<br> R$xx,xx</div>
         <div id="main">
             <button class="openbtn" onclick="toggleNav()">☰</button>  
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+            <div class="chart, marcação">
+                <form asp-action="GetChartData" method="post">
+                    <div class="form-group">
+                        <label for="month">Selecione o mês</label>
+                        <select id="month" name="month" class="form-control">
+                            <option value="Janeiro">Janeiro</option>
+                            <option value="Fevereiro">Fevereiro</option>
+                            <option value="Março">Março</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Maio">Maio</option>
+                            <option value="Junho">Junho</option>
+                            <option value="Julho">Julho</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Setembro">Setembro</option>
+                            <option value="Outubro">Outubro</option>
+                            <option value="Novembro">Novembro</option>
+                            <option value="Dezembro">Dezembro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Selecione o ano</label>
+                        <input type="number" id="year" name="year" class="form-control" min="2000" max="2100"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Data</button>
+                </form>
+                @if (ViewBag.Message != null){
+                    <p>@ViewBag.Message</p>
+                }
+            </div>
+            <div>
+                <ejs-accumulationchart id="chart-container">
+                    <e-accumulation-series-collection>
+                        <e-accumulation-series dataSource="@(ViewBag.Expenses)" xName="Category" yName="Amount">
+                        </e-accumulation-series>
+                    </e-accumulation-series-collection>
+                </ejs-accumulationchart>
+            </div>
         </div>
     </body>
 </html>

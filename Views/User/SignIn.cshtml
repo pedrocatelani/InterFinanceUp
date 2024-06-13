@@ -1,3 +1,4 @@
+@model User
 <html>
     <head>
         <title>Register</title>
@@ -11,7 +12,9 @@
                 <form asp-controller="User" asp-action="SignIn" method="post">
                     <input type="text" id="name" name="name" placeholder="Name" required class="input-field">
                     <input type="email" id="email" name="email" placeholder="Email" required class="input-field">
+                    @Html.ValidationMessageFor(x => x.Email)
                     <input type="password" id="password" name="password" placeholder="Password" required class="input-field">
+                    @Html.ValidationMessageFor(x => x.Password)
                     <input type="submit" value="Register" class="login-button">
                 </form>
             </div>

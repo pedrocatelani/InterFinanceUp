@@ -23,11 +23,9 @@ namespace FinanceUp.Migrations
 
             modelBuilder.Entity("Account", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("AccountId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Month")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<float>("ExpenseTransport")
                         .HasColumnType("real");
@@ -47,6 +45,10 @@ namespace FinanceUp.Migrations
                     b.Property<float>("LeisureExpenses")
                         .HasColumnType("real");
 
+                    b.Property<string>("Month")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<float>("OtherEarnings")
                         .HasColumnType("real");
 
@@ -62,10 +64,15 @@ namespace FinanceUp.Migrations
                     b.Property<float>("Taxes")
                         .HasColumnType("real");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("UserId", "Month");
+                    b.HasKey("AccountId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Accounts");
                 });
@@ -75,6 +82,9 @@ namespace FinanceUp.Migrations
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("Balance")
+                        .HasColumnType("real");
 
                     b.Property<string>("Email")
                         .IsRequired()

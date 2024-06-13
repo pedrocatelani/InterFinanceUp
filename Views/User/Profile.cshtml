@@ -1,4 +1,4 @@
-@model List<User>
+@model User
 <html>
     <head>
         <title>User</title>
@@ -6,11 +6,13 @@
     </head>
     <body>
         <div>
-            @foreach(User user in Model){
-                <h1>@user.Name</h1>
-                <p>@user.Email</p>
-                <a href="/user/update/@user.UserId"><button>Editar</button></a>
-                <a href="/user/delete/@user.UserId"><button>Apagar</button></a>
-            }
+            <button><a href="~/main/dashboard">Voltar</a></button>
+        </div>
+        <div>
+            <h1>@Model.Name</h1>
+            <h2>@Model.Email</h2>
+            <h2>@Model.Balance</h2>
+            <button><a href="~/user/update/@Model.UserId">Editar</a></button>
+            <button><a href="~/user/delete/@Model.UserId">Apagar conta</a></button>
         </div>
 </body>

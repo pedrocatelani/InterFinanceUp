@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.SqlTypes;
 
 public class Account {
+    public Guid AccountId { get; set; }
     public Guid UserId { get; set; }
     public User User { get; set; }
     public string Month { get; set; }

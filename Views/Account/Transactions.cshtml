@@ -8,7 +8,7 @@
     <form asp-controller="Account" asp-action="Transactions" method="POST">
         <div>
             <label for="newValue">Valor</label>
-            <input type="number" id="newValue" name="newValue" placeholder="Valor">
+            <input type="text" id="newValue" name="newValue" placeholder="Valor">
         </div>
         <div>
             <label for="category">Escolha a categoria</label>
@@ -27,7 +27,7 @@
             </select>
         </div>
         <div>
-            <input type="hidden" name="id" value="@Model.UserId">
+            <input type="hidden" name="id" value="@Model.AccountId">
             <button id="confirm" type="submit">Adicionar</button>
         </div>
     </form>
